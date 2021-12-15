@@ -1,8 +1,8 @@
-# CI/CD Pipeline with Containerization and Job Execution on Commits
+# CI/CD Test Pipeline on AWS Bath
 
-This project deploys an architecture providing a CI/CD pipeline that will package an application into a container then trigger a job on AWS Batch using the newly produced container.
+This project deploys an architecture providing a CI/CD pipeline that will package an application into a container when code is pushed to a Git repository. It will then trigger a job on AWS Batch using the newly produced container.
 
-The workflow enabled by this architecture can be used to run computational jobs at scale with AWS Batch. Feel free to modify the architecture based on your needs and imagination.
+This pipeline can be used to develop and test your application in the same environment you would be using in production.
 
 ## Architecture
 

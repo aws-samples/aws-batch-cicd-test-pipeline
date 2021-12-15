@@ -1,0 +1,9 @@
+aws-cdk.core
+aws-cdk.aws-codecommit
+aws-cdk.aws-codebuild
+aws-cdk.aws-codepipeline
+aws-cdk.aws-codepipeline-actions
+aws-cdk.aws-s3-assets
+aws-cdk.aws-ecr
+aws-cdk.aws-batch
+aws-cdk.aws-events

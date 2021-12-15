@@ -1,13 +1,8 @@
-
 # CI/CD Pipeline with Containerization and Job Execution on Commits
 
-This project deploys an architecture providing a CI/CD pipeline that will
-package an application into a container then trigger a job on AWS Batch using
-the newly produced container.
+This project deploys an architecture providing a CI/CD pipeline that will package an application into a container then trigger a job on AWS Batch using the newly produced container.
 
-The workflow enabled by this architecture can be used to run computational jobs
-at scale with AWS Batch. Feel free to modify the architecture based on your needs
-and imagination.
+The workflow enabled by this architecture can be used to run computational jobs at scale with AWS Batch. Feel free to modify the architecture based on your needs and imagination.
 
 ## Architecture
 
@@ -22,11 +17,7 @@ and make use of the following services:
 - [AWS Batch](https://aws.amazon.com/batch/) to run the jobs.
 - [Amazon Virtual Private Cloud](https://aws.amazon.com/vpc/) to deploy instances that will be running the jobs.
 
-The AWS CDK stack will deploy a repository, the pipeline with the build workflow,
-an Amazon ECR repository, a rule to trigger a job when a new container is stored
-on the repository, an AWS Batch Compute Environment as well as a Job Queue and
-a Job Definition and, a VPC in which instances will be residing.
-
+The AWS CDK stack deploys a source code repository, the pipeline with the build workflow, an Amazon ECR repository, a rule to trigger a job when a new container is stored on the repository, an AWS Batch Compute Environment as well as a Job Queue and a Job Definition and, a VPC in which instances will be residing.
 
 ![architecture](./doc/ci-cd-diagram.png)
 
@@ -52,8 +43,7 @@ $ cdk synth
 $ cdk deploy '*'
 ```
 
-Your stack will take a few minutes to deploy. The code in the directory
- `app-package` will be uploaded and added to your *AWS CodeCommit* repository.
+Your stack will take a few minutes to deploy. The code in the directory `app-package` will be uploaded and added to your *AWS CodeCommit* repository.
 
 ## Extending the Stack
 
@@ -64,6 +54,12 @@ You can extend the stack to modify the following components:
 - Job submission: run [Array Jobs](https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html) instead of a single job.
 - Job Execution: replace AWS Batch by another service such as Amazon ECS, Amazon EKS or AWS ParallelCluster.
 
-You could also integrate an [Amazon Lambda](https://aws.amazon.com/lambda/)
-function as a target of the Job Submission Rule if you want to integrate
-additional logic on the job submission process.
+You could also integrate an [Amazon Lambda](https://aws.amazon.com/lambda/) function as a target of the Job Submission Rule if you want to integrate additional logic on the job submission process.
+
+## Security
+
+See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+
+## License
+
+This library is licensed under the MIT-0 License. See the LICENSE file.

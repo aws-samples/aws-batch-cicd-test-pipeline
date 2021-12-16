@@ -1,4 +1,4 @@
-# CI/CD Test Pipeline on AWS Bath
+# CI/CD Test Pipeline on AWS Batch
 
 This project deploys an architecture providing a CI/CD pipeline that will package an application into a container when code is pushed to a Git repository. It will then trigger a job on AWS Batch using the newly produced container.
 

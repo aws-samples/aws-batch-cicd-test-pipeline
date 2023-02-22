@@ -15,16 +15,17 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from aws_cdk import (
-    core,
     aws_s3,
     aws_codebuild,
     aws_ecr,
     aws_ssm,
 )
+import aws_cdk as core
+from constructs import Construct
 
 class CodeBuildECRStack(core.Stack):
 
-  def __init__(self, scope: core.Construct, id: str, namespace, ** kwargs) -> None:
+  def __init__(self, scope: Construct, id: str, namespace, ** kwargs) -> None:
     super().__init__(scope, id, **kwargs)
 
     # ECR repository to push built containers

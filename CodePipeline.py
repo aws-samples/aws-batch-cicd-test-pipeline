@@ -15,7 +15,6 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from aws_cdk import (
-    core,
     aws_s3,
     aws_codepipeline,
     aws_ecr,
@@ -24,10 +23,12 @@ from aws_cdk import (
     aws_codebuild,
     aws_codepipeline_actions
 )
+import aws_cdk as core
+from constructs import Construct
 
 class CodePipelineStack(core.Stack):
 
-    def __init__(self, scope: core.Construct, id: str, namespace, ** kwargs) -> None:
+    def __init__(self, scope: Construct, id: str, namespace, ** kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
         # get repository name

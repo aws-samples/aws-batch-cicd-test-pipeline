@@ -27,23 +27,34 @@ To deploy this architecture, you will need to follow these steps:
 
 1. Create a virtual env and activate it
 ```
-$ python3 -m venv .env
-$ source .env/bin/activate
+cd aws-batch-cicd-test-pipeline
+python3 -m venv .env
+source .env/bin/activate
 ```
 2. Install the required dependencies
 ```
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
-3. Synthesize the CloudFormation template
+3. Provisioning resources for the AWS CDK before you can deploy AWS CDK apps into an AWS environment
 ```
-$ cdk synth
+cdk bootstrap
 ```
-4. Deploy the stack
+4. Synthesize the CloudFormation template
 ```
-$ cdk deploy '*'
+cdk synth
+```
+5. Deploy the stack
+```
+cdk deploy '*' --require-approval never
 ```
 
 Your stack will take a few minutes to deploy. The code in the directory `app-package` will be uploaded and added to your *AWS CodeCommit* repository.
+
+## Clean Up
+
+```
+cdk destroy '*' -f
+```
 
 ## Extending the Stack
 

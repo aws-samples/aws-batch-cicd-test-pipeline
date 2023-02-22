@@ -15,10 +15,11 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from aws_cdk import (
-    core,
     aws_codecommit,
     aws_ssm,
 )
+import aws_cdk as core
+from constructs import Construct
 
 from aws_cdk.aws_s3_assets import Asset
 import os.path
@@ -27,7 +28,7 @@ dirname = os.path.dirname(__file__)
 
 class CodeCommitStack(core.Stack):
 
-    def __init__(self, scope: core.Construct, id: str, namespace, assets_directory=None, ** kwargs) -> None:
+    def __init__(self, scope: Construct, id: str, namespace, assets_directory=None, ** kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
         # check if there is a directory to upload

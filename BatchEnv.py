@@ -15,8 +15,6 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from aws_cdk import (
-    core,
-    aws_batch,
     aws_ec2,
     aws_events,
     aws_events_targets,
@@ -24,10 +22,13 @@ from aws_cdk import (
     aws_ecr,
     aws_ecs
 )
+import aws_cdk.aws_batch_alpha as aws_batch
+import aws_cdk as core
+from constructs import Construct
 
 class BatchEnvironment(core.Stack):
 
-    def __init__(self, scope: core.Construct, id: str, namespace, ** kwargs) -> None:
+    def __init__(self, scope: Construct, id: str, namespace, ** kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
         # get the default VPC

@@ -1,9 +1,3 @@
-aws-cdk.core
-aws-cdk.aws-codecommit
-aws-cdk.aws-codebuild
-aws-cdk.aws-codepipeline
-aws-cdk.aws-codepipeline-actions
-aws-cdk.aws-s3-assets
-aws-cdk.aws-ecr
-aws-cdk.aws-batch
-aws-cdk.aws-events
+aws-cdk-lib==2.65.0
+constructs>=10.0.0,<11.0.0
+aws-cdk.aws-batch-alpha

@@ -16,7 +16,8 @@
 
 #!/usr/bin/env python3
 
-from aws_cdk import core
+import aws_cdk as core
+from constructs import Construct
 
 from CodeCommit import CodeCommitStack
 from CodeBuildECR import CodeBuildECRStack
@@ -24,7 +25,7 @@ from CodePipeline import CodePipelineStack
 from BatchEnv import BatchEnvironment
 
 
-class CICDSoftwarePipeline(core.Construct):
+class CICDSoftwarePipeline(Construct):
     def __init__(self, scope, id, assets_directory):
         super().__init__(scope, id)
 

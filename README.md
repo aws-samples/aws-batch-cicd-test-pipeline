@@ -27,6 +27,7 @@ To deploy this architecture, you will need to follow these steps:
 
 1. Create a virtual env and activate it
 ```
+git clone https://github.com/aws-samples/aws-batch-cicd-test-pipeline.git
 cd aws-batch-cicd-test-pipeline
 python3 -m venv .env
 source .env/bin/activate
